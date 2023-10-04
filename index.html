@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie clicker</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/scrollbar.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="cookieCounter">
+        <h1 id="cookieAmount" class="lightColor">0.00</h1>
+      </div>
+      <div class="small" id="miniCookie" onclick="goldenCookie()">
+        <img src="assets/GoldenCookie.svg" class="smlCookie"></img>
+        <div class="glow"></div>
+      </div>
+      
+      <img id="cookie" onclick="clickCookie()" src="assets/Cookie.svg" height="300" width="300">
+    </img>
+      <div class="cookieCounter smaller">
+        <h1 id="cookieAmountPerSecond" class="lightColor">0.00 C/s</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="upgrades container">
+        <div class="upgradeContiner">
+          <button
+            class="upgradeItem"
+            onclick="clickUpgrade()"
+            id="upgradeButton"
+          >
+            <div>
+              <h3>Click Upgrade</h3>
+            </div>
+            <p class="cost" id="clickCost">$10.00</p>
+            <div class="variableContainer">
+              <p id="clickMod">+1 Cookies</p>
+              <p id="clickAmount">0</p>
+            </div>
+          </button>
+          <button class="upgradeItem" onclick="reciever(this.id)" id="factory">
+            <div>
+              <h3>Factory</h3>
+            </div>
+            <p class="cost" id="factoryCost">$250.00</p>
+            <div class="variableContainer">
+              <p id="factoryMod">+3C/s</p>
+              <p id="factoryAmount">0</p>
+            </div>
+          </button>
+          <button
+            class="upgradeItem"
+            onclick="reciever(this.id)"
+            id="chocolate"
+          >
+            <div>
+              <h3>Chocolate</h3>
+            </div>
+            <p class="cost" id="chocolateCost">$750.00</p>
+            <div class="variableContainer">
+              <p>+24C/s</p>
+              <p id="chocolateAmount">0</p>
+            </div>
+          </button>
+          <button class="upgradeItem" onclick="reciever(this.id)" id="mine">
+            <div>
+              <h3>Mine</h3>
+            </div>
+            <p class="cost" id="mineCost">$12.50K</p>
+            <div class="variableContainer">
+              <p>+200C/s</p>
+              <p id="mineAmount">0</p>
+            </div>
+          </button>
+          <button class="upgradeItem" onclick="reciever(this.id)" id="stock">
+            <div>
+              <h3>Stock Market</h3>
+            </div>
+            <p class="cost" id="stockCost">$30.00K</p>
+            <div class="variableContainer">
+              <p>+1000C/s</p>
+              <p id="stockAmount">0</p>
+            </div>
+          </button>
+        </div>
+        <div class="upgradeContiner">
+          <button class="upgradeItem" onclick="reciever(this.id)" id="grandma">
+            <div>
+              <h3>Grandma's</h3>
+            </div>
+            <p class="cost" id="grandmaCost">$50.00</p>
+            <div class="variableContainer">
+              <p id="grandmaMod">+1 C/s</p>
+              <p id="grandmaAmount">0</p>
+            </div>
+          </button>
+          <button class="upgradeItem" onclick="reciever(this.id)" id="robot">
+            <div>
+              <h3>Robots</h3>
+            </div>
+            <p class="cost" id="robotCost">$500.00</p>
+            <div class="variableContainer">
+              <p id="robotMod">+6C/p</p>
+              <p id="robotAmount">0</p>
+            </div>
+          </button>
+          <button class="upgradeItem" onclick="reciever(this.id)" id="bank">
+            <div>
+              <h3>Bank</h3>
+            </div>
+            <p class="cost" id="bankCost">$1.00K</p>
+            <div class="variableContainer">
+              <p id="bankMod">+48C/s</p>
+              <p id="bankAmount">0</p>
+            </div>
+          </button>
+          <button
+            class="upgradeItem"
+            onclick="reciever(this.id)"
+            id="spaceship"
+          >
+            <div>
+              <h3>Spaceship</h3>
+            </div>
+            <p class="cost" id="spaceshipCost">$15.00K</p>
+            <div class="variableContainer">
+              <p id="spaceshipMod">+600C/s</p>
+              <p id="spaceshipAmount">0</p>
+            </div>
+          </button>
+          <button class="upgradeItem" onclick="reciever(this.id)" id="frog">
+            <div>
+              <h3>Frogs</h3>
+            </div>
+            <p class="cost" id="frogCost">$50.00K</p>
+            <div class="variableContainer">
+              <p>+1500C/s</p>
+              <p id="frogAmount">0</p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Cookie clicker by Finn van de Wiel</p>
+      <p id="year"></p>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
