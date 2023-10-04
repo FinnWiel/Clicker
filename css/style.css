@@ -5,6 +5,7 @@
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    overflow-x: hiden;
 }
 
 body {
@@ -153,3 +154,13 @@ button, input[type="submit"], input[type="reset"] {
     padding: 10px 25px;
     border-radius: 5px;
 }
+
+@media only screen and (max-width: 600px) {
+    .container {
+      height: 70vh;
+    }
+    .upgrades {
+        width: 100%;
+        padding: 0 0 30 0;
+    }
+  }

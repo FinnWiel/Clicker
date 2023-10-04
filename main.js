@@ -253,12 +253,12 @@ function loop() {
   if (cookiesPerSecond > 0) {
     function myLoop() {
       setTimeout(function () {
-        cookieCounter = cookieCounter + cookiesPerSecond;
+        cookieCounter = cookieCounter + (cookiesPerSecond / 2);
         updateCookieCounter();
         if (cookiesPerSecond > 0) {
           myLoop();
         }
-      }, 1000);
+      }, 500);
     }
   }
   myLoop();
