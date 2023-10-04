@@ -163,3 +163,9 @@ button, input[type="submit"], input[type="reset"] {
         padding: 0 0 30 0;
     }
   }
+
+@media only screen and (max-height: 800px){
+    .container {
+        height: 70vh;
+      }
+}
