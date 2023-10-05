@@ -397,5 +397,3 @@ function loop() {
 
 
 document.getElementById("year").innerHTML = "©" + new Date().getFullYear();
-
-localStorage.setItem(cookieCounter, cookieCounter);
