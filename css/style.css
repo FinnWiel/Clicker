@@ -9,6 +9,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html {
+    height:max-content;
+}
 body {
   overflow-x: hidden;
   background: rgb(0, 0, 0);
@@ -39,6 +42,7 @@ footer {
 
 .smaller {
   font-size: 10px;
+  margin-bottom: 20px;
 }
 
 #cookie {
@@ -190,13 +194,27 @@ input[type="reset"] {
     border-bottom-right-radius: 20px; 
 }
 
+.mobile {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     height: 70vh;
   }
-  .upgrades {
-    width: 100%;
-    padding: 0 0 30 0;
+  .upgrades{
+    flex-direction: column;
+    gap: 5px;
+  }
+  .upgradeItem{
+    width: 90vw;
+  }
+  footer{
+    position: relative;
+    bottom: 0;
+  }
+  .mobile{
+    display: block;
   }
 }
 
@@ -204,8 +222,4 @@ input[type="reset"] {
   .container {
     height: 70vh;
   }
-}
-
-.containerSave {
-    height: 10vh;
-}
+} 
