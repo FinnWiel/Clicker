@@ -216,10 +216,16 @@ input[type="reset"] {
   .mobile{
     display: block;
   }
+  .save{
+    width: 150px;
+  }
 }
 
 @media only screen and (max-height: 800px) {
   .container {
     height: 70vh;
+  }
+  .smaller{
+    margin-bottom: 100px;
   }
 } 
