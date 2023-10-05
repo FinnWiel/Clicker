@@ -24,6 +24,163 @@ let spaceshipCost = 15000;
 let stockCost = 30000;
 let frogCost = 50000;
 
+let objVariables = {
+  clickModifier: 1,
+  cookieCounter: 0,
+  cookiesPerSecond: 0,
+  clickCost: 10,
+  grandmaCost: 50,
+  factoryCost: 250,
+  robotCost: 500,
+  chocolateCost: 1250,
+  bankCost: 1000,
+  mineCost: 12500,
+  spaceshipCost: 15000,
+  stockCost: 30000,
+  frogCost: 50000,
+  clickAmount: 0,
+  grandmaAmount: 0,
+  factoryAmount: 0,
+  robotAmount: 0,
+  chocolateAmount: 0,
+  bankAmount: 0,
+  spaceshipAmount: 0,
+  stockAmount: 0,
+  frogAmount: 0, 
+};
+
+function save(){
+/* 
+  for(i = 0;i < arrayVariables.length; i++){
+    if(arrayVariables[i] != null){
+      objVariables.objVariables[i] = arrayVariables[i]
+    }
+  } */
+
+  objVariables.clickModifier = clickModifier;
+  objVariables.cookieCounter = cookieCounter;
+  objVariables.cookiesPerSecond = cookiesPerSecond;
+  objVariables.clickCost = clickCost;
+  objVariables.grandmaCost = grandmaCost;
+  objVariables.factoryCost = factoryCost;
+  objVariables.robotCost = robotCost;
+  objVariables.chocolateCost = chocolateCost;
+  objVariables.bankCost = bankCost;
+  objVariables.mineCost = mineCost;
+  objVariables.spaceshipCost = spaceshipCost;
+  objVariables.stockCost = stockCost;
+  objVariables.frogCost = frogCost;
+  objVariables.clickAmount = clickAmount;
+  objVariables.grandmaAmount = grandmaAmount;
+  objVariables.factoryAmount = factoryAmount;
+  objVariables.factoryAmount = factoryAmount;
+  objVariables.robotAmount = robotAmount;
+  objVariables.chocolateAmount = chocolateAmount;
+  objVariables.bankAmount = bankAmount;
+  objVariables.spaceshipAmount = spaceshipAmount;
+  objVariables.stockAmount = stockAmount;
+  objVariables.frogAmount = frogAmount;
+
+  let save = JSON.stringify(objVariables);
+  let encodedData = btoa(save)
+  localStorage.setItem("data", JSON.stringify(encodedData));
+
+  console.log("Saved!")
+}
+
+function loadSave() {
+  let saveData = JSON.parse(localStorage.getItem("data"))
+  let decodedData = atob(saveData);
+  
+  let obj = new Object(JSON.parse(decodedData));
+  
+  //change amounts (in for loop?)
+  clickModifier = obj.clickModifier;
+  cookieCounter = obj.cookieCounter;
+  cookiesPerSecond = obj.cookiesPerSecond;
+  clickCost = obj.clickCost;
+  grandmaCost = obj.grandmaCost;
+  factoryCost = obj.factoryCost;
+  robotCost = obj.robotCost;
+  chocolateCost = obj.chocolateCost;
+  bankCost = obj.bankCost;
+  mineCost = obj.mineCost;
+  spaceshipCost = obj.spaceshipCost;
+  stockCost = obj.stockCost;
+  frogCost = obj.frogCost;
+  clickAmount = obj.clickAmount;
+  grandmaAmount = obj.grandmaAmount;
+  factoryAmount = obj.factoryAmount;
+  factoryAmount = obj.factoryAmount;
+  robotAmount = obj.robotAmount;
+  chocolateAmount = obj.chocolateAmount;
+  bankAmount = obj.bankAmount;
+  spaceshipAmount = obj.spaceshipAmount;
+  stockAmount = obj.stockAmount;
+  frogAmount = obj.frogAmount;
+
+  //change textboxes
+  refreshTextboxes();
+}
+
+let arrUpgrades = [
+  "grandma",
+  "factory",
+  "robots",
+  "chocolate",
+  "bank",
+  "mine",
+  "spaceship",
+  "stock",
+  "frog",
+];
+
+function refreshTextboxes(){
+  for(i = 0; i < arrUpgrades.length; i++){
+    if(arrUpgrades[i] == "grandma"){
+      updateTextBox(arrUpgrades[i] + "Amount", grandmaAmount);
+      updateTextBox(arrUpgrades[i] + "Cost", grandmaCost);
+    }
+    else if(arrUpgrades[i] == "factory"){
+      updateTextBox(arrUpgrades[i] + "Amount", factoryAmount);
+      updateTextBox(arrUpgrades[i] + "Cost", factoryCost);
+    }
+    else if(arrUpgrades[i] == "robot"){
+      updateTextBox(arrUpgrades[i] + "Amount", robotAmount);
+      updateTextBox(arrUpgrades[i] + "Cost", robotCost);
+    }
+    else if(arrUpgrades[i] == "chocolate"){
+      updateTextBox(arrUpgrades[i] + "Amount", chocolateAmount);
+      updateTextBox(arrUpgrades[i] + "Cost", chocolateCost);
+    }
+    else if(arrUpgrades[i] == "bank"){
+      updateTextBox(arrUpgrades[i] + "Amount", bankAmount);
+      updateTextBox(arrUpgrades[i] + "Cost", bankCost);
+    }
+    else if(arrUpgrades[i] == "mine"){
+      updateTextBox(arrUpgrades[i] + "Amount", mineAmount);
+      updateTextBox(arrUpgrades[i] + "Cost", mineCost);
+    }
+    else if(arrUpgrades[i] == "spaceship"){
+      updateTextBox(arrUpgrades[i] + "Amount", spaceshipAmount);
+      updateTextBox(arrUpgrades[i] + "Cost", spaceshipCost);
+    }
+    else if(arrUpgrades[i] == "stock"){
+      updateTextBox(arrUpgrades[i] + "Amount", stockAmount);
+      updateTextBox(arrUpgrades[i] + "Cost", stockCost);
+    }
+    else if(arrUpgrades[i] == "frog"){
+      updateTextBox(arrUpgrades[i] + "Amount", frogAmount);
+      updateTextBox(arrUpgrades[i] + "Cost", frogCost);
+    }
+  }
+
+  cookies = document.getElementById("cookieAmount");
+  cookies.innerHTML = convertNumber(cookieCounter);
+  cookiesPerS = document.getElementById("cookieAmountPerSecond");
+  cookiesPerS.innerHTML = `${convertNumber(cookiesPerSecond)} C/s`
+}
+
 function clickCookie() {
   cookieCounter += clickModifier;
   updateCookieCounter();
@@ -112,84 +269,58 @@ function reciever(buttonId) {
     upgrade(grandmaCost);
     grandmaAmount += 1;
     grandmaCost = updateCost(grandmaCost);
-    updateTextBox(buttonId + "Amount", grandmaAmount);
-    updateTextBox(buttonId + "Cost", grandmaCost);
     updateCookieCounter();
     cps(1);
-    resetMultiplier();
   } else if (buttonId == "factory" && canAfford(factoryCost)) {
     upgrade(factoryCost);
     factoryAmount += 1;
     factoryCost = updateCost(factoryCost);
-    updateTextBox(buttonId + "Amount", factoryAmount);
-    updateTextBox(buttonId + "Cost", factoryCost);
     updateCookieCounter();
     cps(3);
-    resetMultiplier();
   } else if (buttonId == "robot" && canAfford(robotCost)) {
     upgrade(robotCost);
     robotAmount += 1;
     robotCost = updateCost(robotCost);
-    updateTextBox(buttonId + "Amount", robotAmount);
-    updateTextBox(buttonId + "Cost", robotCost);
     updateCookieCounter();
     cps(6);
-    resetMultiplier();
   } else if (buttonId == "chocolate" && canAfford(chocolateCost)) {
     upgrade(chocolateCost);
     chocolateAmount += 1;
     chocloateCost = updateCost(chocolateCost);
-    updateTextBox(buttonId + "Amount", chocolateAmount);
-    updateTextBox(buttonId + "Cost", chocolateCost);
     updateCookieCounter();
     cps(24);
-    resetMultiplier();
   } else if (buttonId == "bank" && canAfford(bankCost)) {
     upgrade(bankCost);
     bankAmount += 1;
     bankCost = updateCost(bankCost);
-    updateTextBox(buttonId + "Amount", bankAmount);
-    updateTextBox(buttonId + "Cost", bankCost);
     updateCookieCounter();
     cps(48);
-    resetMultiplier();
   } else if (buttonId == "mine" && canAfford(mineCost)) {
     upgrade(mineCost);
     mineAmount += 1;
     mineCost = updateCost(mineCost);
-    updateTextBox(buttonId + "Amount", mineAmount);
-    updateTextBox(buttonId + "Cost", mineCost);
     updateCookieCounter();
     cps(200);
-    resetMultiplier();
   } else if (buttonId == "spaceship" && canAfford(spaceshipCost)) {
     upgrade(spaceshipCost);
     spaceshipAmount += 1;
     spaceshipCost = updateCost(spaceshipCost);
-    updateTextBox(buttonId + "Amount", spaceshipAmount);
-    updateTextBox(buttonId + "Cost", spaceshipCost);
     updateCookieCounter();
     cps(600);
-    resetMultiplier();
   } else if (buttonId == "stock" && canAfford(stockCost)) {
     upgrade(stockCost);
     stockAmount += 1;
     stockCost = updateCost(stockCost);
-    updateTextBox(buttonId + "Amount", stockAmount);
-    updateTextBox(buttonId + "Cost", stockCost);
     updateCookieCounter();
     cps(1000);
-    resetMultiplier();
   } else if (buttonId == "frog" && canAfford(frogCost)) {
     upgrade(frogCost);
     frogAmount += 1;
     frogCost = updateCost(frogCost);
-    updateTextBox(buttonId + "Amount", frogAmount);
-    updateTextBox(buttonId + "Cost", frogCost);
     updateCookieCounter();
     cps(1500);
-    resetMultiplier();
   }
+  refreshTextboxes();
 }
 
 function canAfford(cost) {
@@ -263,6 +394,7 @@ function loop() {
   }
   myLoop();
 }
+
 
 document.getElementById("year").innerHTML = "©" + new Date().getFullYear();
 

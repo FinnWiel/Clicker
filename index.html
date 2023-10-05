@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="css/scrollbar.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container"> 
+      <div class="containerSave">
+        <button class="save" onclick="save()">Save</button>
+        <button class="save load" onclick="loadSave()">Load</button>
+      </div> 
       <div class="cookieCounter">
         <h1 id="cookieAmount" class="lightColor">0.00</h1>
       </div>
@@ -24,6 +28,8 @@
       </div>
     </div>
     <div class="container">
+      
+      
       <div class="upgrades container">
         <div class="upgradeContiner">
           <button
@@ -58,7 +64,7 @@
             <div>
               <h3>Chocolate</h3>
             </div>
-            <p class="cost" id="chocolateCost">$750.00</p>
+            <p class="cost" id="chocolateCost">$1.25K</p>
             <div class="variableContainer">
               <p>+24C/s</p>
               <p id="chocolateAmount">0</p>
@@ -143,6 +149,9 @@
         </div>
       </div>
     </div>
+    </div>
+    <div class="container containerSave">
+      
     <footer>
       <p>Cookie clicker by Finn van de Wiel</p>
       <p id="year"></p>

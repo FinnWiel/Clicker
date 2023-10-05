@@ -1,171 +1,211 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    overflow-x: hiden;
-    -webkit-tap-highlight-color: transparent;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-x: hiden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    overflow-x: hidden;
-    background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(100,77,39,1) 5%, rgba(239,186,99,1) 100%);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  overflow-x: hidden;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(100, 77, 39, 1) 5%,
+    rgba(239, 186, 99, 1) 100%
+  );
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 footer {
-    width: 100%;
-    color: white;
-    padding: 10px 10px;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  color: white;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .cookieCounter {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .smaller {
-    font-size: 10px;
+  font-size: 10px;
 }
 
-#cookie{
-    cursor: pointer;
+#cookie {
+  cursor: pointer;
 }
 
-.lightColor{
-    color: rgb(255, 248, 208);
+.lightColor {
+  color: rgb(255, 248, 208);
 }
 
 .small {
-    height: 50px;
-    width: 50px;
-    display: none;
-    z-index: 999;
-    position: absolute;
-    cursor: pointer;
+  height: 50px;
+  width: 50px;
+  display: none;
+  z-index: 999;
+  position: absolute;
+  cursor: pointer;
 }
 
 .glow {
-    box-shadow: 0px -20px 40px 10px #fff200;
+  box-shadow: 0px -20px 40px 10px #fff200;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 60vh;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
-.upgrades{
-    flex-direction: row;
-    align-items: start;
-    justify-content: space-between;
-    height: 40vh;
+.upgrades {
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  height: 40vh;
 }
 
 .upgradeContiner {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
 .upgradeItem {
-    width: 40vw;
-    height: 80px;
-    background: rgb(175,134,67);
-    background: radial-gradient(circle, rgba(175,134,67,1) 0%, rgba(117,73,4,1) 70%);
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+  width: 40vw;
+  height: 80px;
+  background: rgb(175, 134, 67);
+  background: radial-gradient(
+    circle,
+    rgba(175, 134, 67, 1) 0%,
+    rgba(117, 73, 4, 1) 70%
+  );
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .variableContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
 }
 
 .cost {
-    font-size: 27px;
+  font-size: 27px;
 }
 
 .variableContainer > p {
-    font-style: italic;
+  font-style: italic;
 }
 
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-.upgradeUtil{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.upgradeUtil {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.amountUpgraded{
-    display: flex;   
+.amountUpgraded {
+  display: flex;
 }
 
-.upgradeAmount{
-    background-color: rgb(117, 73, 4);
-    color: white;
-    padding: 10px 25px;
-    margin: 20px 0px;
-    cursor: pointer;
+.upgradeAmount {
+  background-color: rgb(117, 73, 4);
+  color: white;
+  padding: 10px 25px;
+  margin: 20px 0px;
+  cursor: pointer;
 }
 
 .rounded {
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .active {
-    background-color: rgb(242, 188, 101);
-    color: black;
-    font-weight: bold;
-    box-shadow: inset 5px 5px 10px rgb(193, 141, 56);
+  background-color: rgb(242, 188, 101);
+  color: black;
+  font-weight: bold;
+  box-shadow: inset 5px 5px 10px rgb(193, 141, 56);
 }
 
 #cookieAmount {
-    background: rgb(117,73,4);
-    background: linear-gradient(324deg, rgba(117,73,4,1) 30%, rgba(240,204,9,1) 100%);
-    margin-top: 1em;
-    padding: 10px 25px;
-    border-radius: 5px;
+  background: rgb(117, 73, 4);
+  background: linear-gradient(
+    324deg,
+    rgba(117, 73, 4, 1) 30%,
+    rgba(240, 204, 9, 1) 100%
+  );
+  margin-top: 1em;
+  padding: 10px 25px;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.save {
+  height: 40px;
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(113, 71, 23);
+  color: white;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.load {
+    border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; 
 }
 
 @media only screen and (max-width: 600px) {
-    .container {
-      height: 70vh;
-    }
-    .upgrades {
-        width: 100%;
-        padding: 0 0 30 0;
-    }
+  .container {
+    height: 70vh;
   }
+  .upgrades {
+    width: 100%;
+    padding: 0 0 30 0;
+  }
+}
 
-@media only screen and (max-height: 800px){
-    .container {
-        height: 70vh;
-      }
+@media only screen and (max-height: 800px) {
+  .container {
+    height: 70vh;
+  }
+}
+
+.containerSave {
+    height: 10vh;
 }
