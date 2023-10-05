@@ -43,7 +43,9 @@ footer {
 .smaller {
   font-size: 10px;
   margin-bottom: 20px;
+  z-index: 50;
 }
+
 
 #cookie {
   cursor: pointer;
@@ -74,6 +76,8 @@ footer {
   justify-content: center;
   gap: 30px;
 }
+
+
 
 .upgrades {
   flex-direction: row;
@@ -111,6 +115,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   position: relative;
+  width: 100%;
 }
 
 .cost {
@@ -232,3 +237,8 @@ input[type="reset"] {
     margin-bottom: 100px;
   }
 } 
+
+.no{
+    height: 10vh;
+    position: sticky;
+}
