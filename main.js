@@ -57,6 +57,7 @@ function save(){
     }
   } */
 
+  //(for loop?)
   objVariables.clickModifier = clickModifier;
   objVariables.cookieCounter = cookieCounter;
   objVariables.cookiesPerSecond = cookiesPerSecond;
@@ -92,7 +93,7 @@ function loadSave() {
   if(cookiesPerSecond <= 0){
     loop();
   }
-  
+
   let saveData = JSON.parse(localStorage.getItem("data"))
   let decodedData = atob(saveData);
   
