@@ -89,6 +89,10 @@ function save(){
 }
 
 function loadSave() {
+  if(cookiesPerSecond <= 0){
+    loop();
+  }
+  
   let saveData = JSON.parse(localStorage.getItem("data"))
   let decodedData = atob(saveData);
   
@@ -381,12 +385,12 @@ function cps(x) {
 }
 
 function loop() {
-  if (cookiesPerSecond > 0) {
+  if (cookiesPerSecond >= 0) {
     function myLoop() {
       setTimeout(function () {
         cookieCounter = cookieCounter + (cookiesPerSecond / 2);
         updateCookieCounter();
-        if (cookiesPerSecond > 0) {
+        if (cookiesPerSecond >= 0) {
           myLoop();
         }
       }, 500);
