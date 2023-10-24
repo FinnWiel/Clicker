@@ -131,7 +131,7 @@ function loadSave() {
 let arrUpgrades = [
   "grandma",
   "factory",
-  "robots",
+  "robot",
   "chocolate",
   "bank",
   "mine",
@@ -291,7 +291,7 @@ function reciever(buttonId) {
   } else if (buttonId == "chocolate" && canAfford(chocolateCost)) {
     upgrade(chocolateCost);
     chocolateAmount += 1;
-    chocloateCost = updateCost(chocolateCost);
+    chocolateCost = updateCost(chocolateCost);
     updateCookieCounter();
     cps(24);
   } else if (buttonId == "bank" && canAfford(bankCost)) {
